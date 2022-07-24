@@ -43,7 +43,10 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .and()
                 .formLogin()
-             .loginPage("/login").permitAll();
+                .loginPage("/login").permitAll()
+                .defaultSuccessUrl("/courses",true)
+                .and()
+                .rememberMe().alwaysRemember(true);
 
     }
 
